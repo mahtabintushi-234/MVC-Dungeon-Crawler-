@@ -1,0 +1,7 @@
+RewriteEngine on
+# Let media files through
+RewriteCond ${REQUEST_URI} ^.+$
+RewriteCond %{REQUEST_FILENAME} \.(jpg|png|gif|mp3|js|css)$ [NC]
+RewriteRule ^ - [L]
+# Redirect aught else to the controller.
+RewriteRule ^ index.php [L]
